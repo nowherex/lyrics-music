@@ -17,8 +17,6 @@ module.exports = {
         'selected': '#2E325C',
         'selected-light': '#565A84',
         'primary-light': '#4E5389',
-        'lighter': '#E1E8ED',
-        'lightest': '#F5F8FA',
       }
     },
   },

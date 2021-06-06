@@ -1,5 +1,5 @@
 <template>
-<div class="relative min-h-screen md:flex bg-primary">
+<div class="min-h-screen md:flex bg-primary">
   <div>
     <!-- mobile menu bar -->
     <div
@@ -41,7 +41,7 @@
         <button
           v-for="(tab, index) in tabs"
           :key="index"
-          @click="pageId = tab.id"
+          @click="routeTo(tab)"
           :class="
             `focus:outline-none flex items-center py-2 px-4 mt-2 hover:bg-secondary transition duration-200 rounded-l-lg w-full ${
               pageId === tab.id
@@ -58,7 +58,9 @@
   </div>
   <div class="flex-1 p-8 bg-secondary">
     <router-view />
+    <div class=" flex items-center justify-center min-w-screen bg-selected rounded m-5 p-5 text-center text-white">Developed by <a class="pl-2" href="https://github.com/nowherex" target="_blank">Leonardo Guedes</a><strong class="pl-3">powered by</strong> <a href="https://www.vagalume.com.br/" target="_blank"><img class="pl-3" src="https://api.vagalume.com.br/images/logo-24.png"></a></div>
   </div>
+
 </div>
 </template>
 
@@ -71,11 +73,11 @@ export default {
       mobileMenuActive: false,
       pageId: "home",
       tabs: [
-        { icon: "fas fa-home", title: "Home", id: "home" },
-        { icon: "fab fa-hotjar", title: "Hot Spots", id: "hotspots" },
-        { icon: "fas fa-music", title: "Musics", id: "musics" },
-        { icon: "fas fa-guitar", title: "Artists", id: "artists" },
-        { icon: "fas fa-user", title: "My Account", id: "myaccount" },
+        { icon: "fas fa-home", title: "Home", id: "home", link: '/' },
+        { icon: "fab fa-hotjar", title: "Hot Spots", id: "hotspots", link: '/Topartist' },
+        { icon: "fas fa-music", title: "Musics", id: "musics", link: '/Musics' },
+        { icon: "fas fa-guitar", title: "Artists", id: "artists", link: '/' },
+        { icon: "fas fa-user", title: "My Account", id: "myaccount", link: '/' },
       ],
     }
   },
@@ -83,6 +85,10 @@ export default {
     showMobileMenu() {
       this.mobileMenuActive = !this.mobileMenuActive;
     },
+    routeTo(item) {
+      this.pageId = item.id
+      this.$router.push(`${item.link}`)
+    }
   },
 }
 </script>
