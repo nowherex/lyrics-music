@@ -42,7 +42,7 @@
           :key="index"
           @click="pageId = tab.id"
           :class="
-            `focus:outline-none flex items-center py-2 px-4 hover:bg-secondary transition duration-200 rounded-l-lg w-full ${
+            `focus:outline-none flex items-center py-2 px-4 mt-2 hover:bg-secondary transition duration-200 rounded-l-lg w-full ${
               pageId === tab.id
                 ? 'text-white bg-secondary'
                 : 'text-selected-light'
@@ -1097,6 +1097,7 @@
           </svg>
         </div>
       </div>
+      <!-- HOT SPOTS -->
       <div>
         <div class="text-selected-light font-bold mt-10">
           <i class="fab fa-hotjar"></i> HOT SPOTS
@@ -1109,7 +1110,7 @@
             >
               <!-- 1 card -->
               <div
-                class="relative bg-selected py-6 px-6 rounded-3xl w-64 my-4 shadow-xl"
+                class="bg-selected py-6 px-6 rounded-3xl w-64 my-4 shadow-xl"
               >
                 <div>
                   <img
@@ -1129,7 +1130,7 @@
 
               <!-- 2 card -->
               <div
-                class="relative bg-selected py-6 px-6 rounded-3xl w-64 my-4 shadow-xl"
+                class="bg-selected py-6 px-6 rounded-3xl w-64 my-4 shadow-xl"
               >
                 <img
                   src="https://www.vagalume.com.br/david-guetta/images/140169.webp"
@@ -1148,7 +1149,7 @@
               </div>
               <!-- 3 card -->
               <div
-                class="relative bg-selected py-6 px-6 rounded-3xl w-64 my-4 shadow-xl"
+                class="bg-selected py-6 px-6 rounded-3xl w-64 my-4 shadow-xl"
               >
                 <img
                   src="https://s2.vagalume.com/dua-lipa/images/140152.jpg"
@@ -1165,7 +1166,7 @@
               </div>
               <!-- 4 card -->
               <div
-                class="relative bg-selected py-6 px-6 rounded-3xl w-64 my-4 shadow-xl"
+                class="bg-selected py-6 px-6 rounded-3xl w-64 my-4 shadow-xl"
               >
                 <img
                   src="https://s2.vagalume.com/jxdn/images/140151.jpg"
@@ -1197,15 +1198,138 @@
                   </div>
                 </div>
               </div>
+            
             </div>
+              <!-- fimcards -->
           </div>
         </div>
       </div>
+  <div>
+                <div class="text-selected-light font-bold mt-10 mb-2">
+          <i class="fas fa-chart-line"></i> TOP 100
+        </div>
+    <div class="container px-6 py-8 mx-auto">
+        <div class="flex flex-col items-center justify-center space-y-8 lg:-mx-4 lg:flex-row lg:items-stretch lg:space-y-0">
+            <div class="flex flex-col items-center w-full max-w-md py-5 space-y-8 text-center bg-selected rounded-lg lg:mx-4">
+                <div class="flex-shrink-0">
+                    <span
+                        class="pt-2 text-4xl font-bold text-white uppercase"
+                    ><i class="fas fa-music"></i>
+                        Musics
+                    </span>
+                </div>
+                <ul class="flex-1 space-y-4">
+                  <li class="flex text-gray-500 hover:bg-primary p-2 cursor-pointer">
+                      <h1 class="p-3 text-3xl font-bold text-white uppercase">1°</h1>
+                        <div class="flex flex-wrap">
+                          <p class="pt-2 text-1xl font-bold text-white uppercase">Someone You Loved (tradução)</p>
+                          <p class="pt-2 text-lg text-white uppercase">Lewis Capaldi</p>
+                        </div>
+                    </li>
+                  <li class="flex text-gray-500 hover:bg-primary p-2 cursor-pointer">
+                      <h1 class="p-3 text-3xl font-bold text-white uppercase">2°</h1>
+                        <div class="flex flex-wrap">
+                          <p class="pt-2 text-1xl font-bold text-white uppercase">Someone You Loved (tradução)</p>
+                          <p class="pt-2 text-lg text-white uppercase">Lewis Capaldi</p>
+                        </div>
+                    </li>
+                  <li class="flex text-gray-500 hover:bg-primary p-2 cursor-pointer">
+                      <h1 class="p-3 text-3xl font-bold text-white uppercase">3°</h1>
+                        <div class="flex flex-wrap">
+                          <p class="pt-2 text-1xl font-bold text-white uppercase">Someone You Loved (tradução)</p>
+                          <p class="pt-2 text-lg text-white uppercase">Lewis Capaldi</p>
+                        </div>
+                    </li>
+                  <li class="flex text-gray-500 hover:bg-primary p-2 cursor-pointer">
+                      <h1 class="p-3 text-3xl font-bold text-white uppercase">4°</h1>
+                        <div class="flex flex-wrap">
+                          <p class="pt-2 text-1xl font-bold text-white uppercase">Someone You Loved (tradução)</p>
+                          <p class="pt-2 text-lg text-white uppercase">Lewis Capaldi</p>
+                        </div>
+                    </li>
+                  <li class="flex text-gray-500 hover:bg-primary p-2 cursor-pointer">
+                      <h1 class="p-3 text-3xl font-bold text-white uppercase">5°</h1>
+                        <div class="flex flex-wrap">
+                          <p class="pt-2 text-1xl font-bold text-white uppercase">Someone You Loved (tradução)</p>
+                          <p class="pt-2 text-lg text-white uppercase">Lewis Capaldi</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <button
+                    class="max-w-sm inline-flex items-center justify-center px-4 py-2 font-semibold text-white uppercase transition-colors bg-primary rounded-lg hover:bg-selected-light focus:outline-none"
+                >
+                    TOP 100 MUSICS
+                </button>
+            </div>
+
+            <div class="flex flex-col items-center w-full max-w-md py-5 space-y-8 text-center bg-selected rounded-lg lg:mx-4">
+                <div class="flex-shrink-0">
+                    <span
+                        class="pt-2 text-4xl font-bold text-white uppercase"
+                    ><i class="fas fa-guitar"></i>
+                        Artists
+                    </span>
+                </div>
+                <ul class="flex-1 space-y-4 w-full">
+                  <li class="flex items-center text-gray-500 hover:bg-primary p-2 cursor-pointer">
+                      <h1 class="p-3 text-3xl font-bold text-white uppercase">1°</h1>
+                        <div class="flex items-center pl-4">
+                          <img src="https://www.vagalume.com.br/anitta/images/anitta.webp" class="max-h-12 rounded-full">
+                          <p class="p-2 pl-6 text-lg text-white uppercase">Anita</p>
+                        </div>
+                  </li>
+                  <li class="flex items-center text-gray-500 hover:bg-primary p-2 cursor-pointer">
+                      <h1 class="p-3 text-3xl font-bold text-white uppercase">2°</h1>
+                        <div class="flex items-center pl-4">
+                          <img src="https://www.vagalume.com.br/olivia-rodrigo/images/olivia-rodrigo.webp" class="max-h-12 rounded-full">
+                          <p class="p-2 pl-6 text-lg text-white uppercase">Olivia Rodrigo</p>
+                        </div>
+                  </li>
+                  <li class="flex items-center text-gray-500 hover:bg-primary p-2 cursor-pointer">
+                      <h1 class="p-3 text-3xl font-bold text-white uppercase">3°</h1>
+                        <div class="flex items-center pl-4">
+                          <img src="https://www.vagalume.com.br/olivia-rodrigo/images/olivia-rodrigo.webp" class="max-h-12 rounded-full">
+                          <p class="p-2 pl-6 text-lg text-white uppercase">Olivia Rodrigo</p>
+                        </div>
+                  </li>
+                  <li class="flex items-center text-gray-500 hover:bg-primary p-2 cursor-pointer">
+                      <h1 class="p-3 text-3xl font-bold text-white uppercase">4°</h1>
+                        <div class="flex items-center pl-4">
+                          <img src="https://www.vagalume.com.br/olivia-rodrigo/images/olivia-rodrigo.webp" class="max-h-12 rounded-full">
+                          <p class="p-2 pl-6 text-lg text-white uppercase">Olivia Rodrigo</p>
+                        </div>
+                  </li>
+                  <li class="flex items-center text-gray-500 hover:bg-primary p-2 cursor-pointer">
+                      <h1 class="p-3 text-3xl font-bold text-white uppercase">5°</h1>
+                        <div class="flex items-center pl-4">
+                          <img src="https://www.vagalume.com.br/olivia-rodrigo/images/olivia-rodrigo.webp" class="max-h-12 rounded-full">
+                          <p class="p-2 pl-6 text-lg text-white uppercase">Olivia Rodrigo</p>
+                        </div>
+                  </li>
+                </ul>
+
+                <button
+                    class="max-w-sm inline-flex items-center justify-center px-4 py-2 font-semibold text-white uppercase transition-colors bg-primary rounded-lg hover:bg-selected-light focus:outline-none"
+                >
+                    TOP 100 ARTISTS
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
     </div>
   </div>
 </template>
 <script>
 export default {
+  name: 'App',
+  metaInfo: {
+      title: 'BetterLyrics',
+      titleTemplate: '%s | BetterLyrics'
+    },
   data() {
     return {
       mobileMenuActive: false,
@@ -1214,7 +1338,7 @@ export default {
         { icon: "fas fa-home", title: "Home", id: "home" },
         { icon: "fas fa-search", title: "Discover", id: "discover" },
         { icon: "fas fa-music", title: "Musics", id: "musics" },
-        { icon: "fas fa-users", title: "Artists", id: "artists" },
+        { icon: "fas fa-guitar", title: "Artists", id: "artists" },
         { icon: "fas fa-user", title: "My Account", id: "myaccount" },
       ],
     };
