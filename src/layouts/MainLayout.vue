@@ -33,7 +33,7 @@
         } z-40 bg-primary text-white w-64 space-y-6 items-center py-6 absolute inset-y-0 left-0 transform md:relative md:translate-x-0 transition duration-200 ease-in-out`
       "
     >
-      <a href="#" class="flex items-center space-x-2 pl-6">
+      <a href="/" class="flex items-center space-x-2 pl-6">
         <i class="fas fa-music p-1"></i>
         <span class="text-2xl font-extrabold">BetterLyrics</span>
       </a>
