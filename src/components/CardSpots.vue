@@ -1,5 +1,5 @@
 <template>
-  <div @click="this.$router.push(`/lyric/${data.musicID}`)" class="bg-selected py-6 px-6 rounded-3xl w-64 h-64 my-4 shadow-xl hover:bg-primary cursor-pointer transition duration-200">
+  <div @click="this.$router.push(`/lyric/${data.musicID}`)" class="bg-selected py-6 px-6 rounded-3xl w-64 h-80 my-4 shadow-xl hover:bg-primary cursor-pointer transition duration-200">
     <div>
       <img
         :src="data.pic_src"
