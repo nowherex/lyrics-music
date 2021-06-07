@@ -8,11 +8,13 @@ class ApiRank {
     }
 
     async getRankMusic (limit) {
-        return await this.api.get(`apikey=660a4395f992ff67786584e238f501aa&type=mus&&scope=translations&limit=${limit}`)
+        // eslint-disable-next-line no-undef
+        return await this.api.get(`apikey=${process.env.VUE_APP_KEY_VAGALUME}&type=mus&&scope=translations&limit=${limit}`)
     }
 
     async getRankArtist (limit) {
-        return await this.api.get(`apikey=660a4395f992ff67786584e238f501aa&type=art&period=month&scope=translations&limit=${limit}`)
+        // eslint-disable-next-line no-undef
+        return await this.api.get(`apikey=${process.env.VUE_APP_KEY_VAGALUME}&type=art&period=month&scope=translations&limit=${limit}`)
     }
 
 

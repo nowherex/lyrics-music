@@ -3,7 +3,8 @@ import axios from 'axios'
 class MusicApi { 
     constructor() {
         this.api = axios.create({
-            baseURL: 'https://api.vagalume.com.br/search.php?apikey=660a4395f992ff67786584e238f501aa'
+            // eslint-disable-next-line no-undef
+            baseURL: `https://api.vagalume.com.br/search.php?apikey=${process.env.VUE_APP_KEY_VAGALUME}`
         })
     }
 
