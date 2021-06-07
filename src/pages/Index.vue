@@ -1042,73 +1042,72 @@
               class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"
             >
               <!-- 1 card -->
-              <div v-for="(item, index) in spots"
-              :key="index">
-
-              <CardSpots :data="item" />
+              <div v-for="(item, index) in spots" :key="index">
+                <CardSpots :data="item" />
               </div>
-            
             </div>
           </div>
         </div>
       </div>
-  <div>
-                <div class="text-selected-light font-bold mt-10 mb-2">
+      <div>
+        <div class="text-selected-light font-bold mt-10 mb-2">
           <i class="fas fa-chart-line"></i> TOP 100
         </div>
-    <div class="container px-6 py-8 mx-auto">
-        <div class="flex flex-col items-center justify-center space-y-8 lg:-mx-4 lg:flex-row lg:items-stretch lg:space-y-0">
-            <div class="flex flex-col items-center w-full max-w-md py-5 space-y-8 text-center bg-selected rounded-lg lg:mx-4">
-                <div class="flex-shrink-0">
-                    <span
-                        class="pt-2 text-4xl font-bold text-white uppercase"
-                    ><i class="fas fa-music"></i>
-                        Musics
-                    </span>
-                </div>
-                <ul class="flex-1 space-y-4">
-                                <li v-for="(item, index) in topMusic"
-              :key="index">
-              <LiMusic :data="{...item, index}" /> </li>
-                </ul>
+        <div class="container px-6 py-8 mx-auto">
+          <div
+            class="flex flex-col items-center justify-center space-y-8 lg:-mx-4 lg:flex-row lg:items-stretch lg:space-y-0"
+          >
+            <div
+              class="flex flex-col items-center w-full max-w-md py-5 space-y-8 text-center bg-selected rounded-lg lg:mx-4"
+            >
+              <div class="flex-shrink-0">
+                <span class="pt-2 text-4xl font-bold text-white uppercase"
+                  ><i class="fas fa-music"></i>
+                  Musics
+                </span>
+              </div>
+              <ul class="flex-1 space-y-4">
+                <li v-for="(item, index) in topMusic" :key="index">
+                  <LiMusic :data="{ ...item, index }" />
+                </li>
+              </ul>
 
-                <button
-                    class="max-w-sm inline-flex items-center justify-center px-4 py-2 font-semibold text-white uppercase transition-colors bg-primary rounded-lg hover:bg-selected-light focus:outline-none"
-                >
-                    TOP 100 MUSICS
-                </button>
+              <button
+                class="max-w-sm inline-flex items-center justify-center px-4 py-2 font-semibold text-white uppercase transition-colors bg-primary rounded-lg hover:bg-selected-light focus:outline-none"
+              >
+                TOP 100 MUSICS
+              </button>
             </div>
-            <div class="flex flex-col items-center w-full max-w-md py-5 space-y-8 text-center bg-selected rounded-lg lg:mx-4">
-                <div class="flex-shrink-0">
-                    <span
-                        class="pt-2 text-4xl font-bold text-white uppercase"
-                    ><i class="fas fa-guitar"></i>
-                        Artists
-                    </span>
-                </div>
-                <ul class="flex-1 space-y-4 w-full">
-              <li v-for="(item, index) in topArtists"
-              :key="index">
-              <LiArtist :data="{...item, index}" />
+            <div
+              class="flex flex-col items-center w-full max-w-md py-5 space-y-8 text-center bg-selected rounded-lg lg:mx-4"
+            >
+              <div class="flex-shrink-0">
+                <span class="pt-2 text-4xl font-bold text-white uppercase"
+                  ><i class="fas fa-guitar"></i>
+                  Artists
+                </span>
+              </div>
+              <ul class="flex-1 space-y-4 w-full">
+                <li v-for="(item, index) in topArtists" :key="index">
+                  <LiArtist :data="{ ...item, index }" />
+                </li>
+              </ul>
 
-              </li>
-                              </ul>
-
-                <button
-                    class="max-w-sm inline-flex items-center justify-center px-4 py-2 font-semibold text-white uppercase transition-colors bg-primary rounded-lg hover:bg-selected-light focus:outline-none"
-                >
-                    TOP 100 ARTISTS
-                </button>
+              <button
+                class="max-w-sm inline-flex items-center justify-center px-4 py-2 font-semibold text-white uppercase transition-colors bg-primary rounded-lg hover:bg-selected-light focus:outline-none"
+              >
+                TOP 100 ARTISTS
+              </button>
             </div>
-
+          </div>
         </div>
-    </div>
-</div>
-
+      </div>
     </div>
   </div>
 </template>
 <script>
+import apiHotpot from '@/services/apiHotpot.js'
+import apiRank from '@/services/apiRank.js'
 import CardSpots from '@/components/CardSpots.vue'
 import LiArtist from '@/components/LiArtist.vue'
 import LiMusic from '@/components/LiMusic.vue'
@@ -1125,15 +1124,14 @@ export default {
       title: 'BetterLyrics',
       titleTemplate: '%s | BetterLyrics'
     },
+  mounted () {
+   this.apiHotpot()
+   this.apiRank()
+  },
   data() {
     return {
-      spots: [
-        {artist: 'Calvin Harris', music: 'By Your Side (ft. Tom Grennan)', src: 'https://www.vagalume.com.br/calvin-harris/images/140170.webp'},
-        {artist: 'David Guetta ft. MORTEN & John Martin', music: 'Impossible (With MORTEN, ft. John Martin)', src: 'https://www.vagalume.com.br/david-guetta/images/140169.webp'},
-        {artist: 'Dua Lipa', music: 'Love Again', src: 'https://s2.vagalume.com/dua-lipa/images/140152.jpg'},
-        {artist: 'Jxdn', music: 'Think About Me', src: 'https://s2.vagalume.com/jxdn/images/140151.jpg'},
-        {artist: 'Jax Jones', music: 'Feels', src: 'https://s2.vagalume.com/jax-jones/images/140143.jpg'},
-      ],
+      dataReady: false,
+      spots: [],
       topArtists: [
         {artist: 'Anitta', src: 'https://www.vagalume.com.br/anitta/images/anitta.webp'},
         {artist: 'Olivia Rodrigo', src: 'https://www.vagalume.com.br/olivia-rodrigo/images/olivia-rodrigo.webp'},
@@ -1141,15 +1139,25 @@ export default {
         {artist: 'Olivia Rodrigo', src: 'https://www.vagalume.com.br/olivia-rodrigo/images/olivia-rodrigo.webp'},
         {artist: 'Olivia Rodrigo', src: 'https://www.vagalume.com.br/olivia-rodrigo/images/olivia-rodrigo.webp'}
       ],
-      topMusic: [
-        {music: 'Someone You Loved (tradução)', artist: 'Lewis Capaldi'},
-        {music: 'Someone You Loved (tradução)', artist: 'Lewis Capaldi'},
-        {music: 'Someone You Loved (tradução)', artist: 'Lewis Capaldi'},
-        {music: 'Someone You Loved (tradução)', artist: 'Lewis Capaldi'},
-        {music: 'Someone You Loved (tradução)', artist: 'Lewis Capaldi'},
-      ]
+      topMusic: []
     };
   },
+  methods: {
+    async apiHotpot() {
+      const res = await apiHotpot.getHotSpot()
+      const data = res.data.hotspots
+      data.filter(item => item.type === "music")
+        .filter(song => {
+            this.spots.length < 5 ? this.spots.push(song) : false
+        })
+      this.dataReady = true
+    },
+    async apiRank() {
+      const resMusic = await apiRank.getRankMusic(10)
+      const dataMusic = resMusic.data.mus.month.translations
+      this.topMusic = dataMusic
+    }
+  }
 };
 </script>
 <style></style>

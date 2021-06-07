@@ -45,6 +45,7 @@ Hot Spot is the name of the Vagalume section is updated daily on the home with n
   </div>
 </template>
 <script>
+import apiHotpot from '@/services/apiHotpot.js'
 import CardSpots from '@/components/CardSpots.vue'
 import Search from '@/components/Search.vue'
 export default {
@@ -57,32 +58,23 @@ export default {
       title: 'BetterLyrics',
       titleTemplate: '%s | BetterLyrics'
     },
+  mounted() {
+    this.apiHotpot()
+  },
   data() {
     return {
-      spots: [
-        {artist: 'Calvin Harris', music: 'By Your Side (ft. Tom Grennan)', src: 'https://www.vagalume.com.br/calvin-harris/images/140170.webp'},
-        {artist: 'David Guetta ft. MORTEN & John Martin', music: 'Impossible (With MORTEN, ft. John Martin)', src: 'https://www.vagalume.com.br/david-guetta/images/140169.webp'},
-        {artist: 'Dua Lipa', music: 'Love Again', src: 'https://s2.vagalume.com/dua-lipa/images/140152.jpg'},
-        {artist: 'Jxdn', music: 'Think About Me', src: 'https://s2.vagalume.com/jxdn/images/140151.jpg'},
-        {artist: 'Jax Jones', music: 'Feels', src: 'https://s2.vagalume.com/jax-jones/images/140143.jpg'},
-        {artist: 'Jax Jones', music: 'Feels', src: 'https://s2.vagalume.com/jax-jones/images/140143.jpg'},
-        {artist: 'Jax Jones', music: 'Feels', src: 'https://s2.vagalume.com/jax-jones/images/140143.jpg'},
-        {artist: 'Jax Jones', music: 'Feels', src: 'https://s2.vagalume.com/jax-jones/images/140143.jpg'},
-        {artist: 'Jax Jones', music: 'Feels', src: 'https://s2.vagalume.com/jax-jones/images/140143.jpg'},
-        {artist: 'Jax Jones', music: 'Feels', src: 'https://s2.vagalume.com/jax-jones/images/140143.jpg'},
-        {artist: 'Jax Jones', music: 'Feels', src: 'https://s2.vagalume.com/jax-jones/images/140143.jpg'},
-        {artist: 'Jax Jones', music: 'Feels', src: 'https://s2.vagalume.com/jax-jones/images/140143.jpg'},
-        {artist: 'Jax Jones', music: 'Feels', src: 'https://s2.vagalume.com/jax-jones/images/140143.jpg'},
-        {artist: 'Jax Jones', music: 'Feels', src: 'https://s2.vagalume.com/jax-jones/images/140143.jpg'},
-        {artist: 'Jax Jones', music: 'Feels', src: 'https://s2.vagalume.com/jax-jones/images/140143.jpg'},
-        {artist: 'Jax Jones', music: 'Feels', src: 'https://s2.vagalume.com/jax-jones/images/140143.jpg'},
-        {artist: 'Jax Jones', music: 'Feels', src: 'https://s2.vagalume.com/jax-jones/images/140143.jpg'},
-        {artist: 'Jax Jones', music: 'Feels', src: 'https://s2.vagalume.com/jax-jones/images/140143.jpg'},
-        {artist: 'Jax Jones', music: 'Feels', src: 'https://s2.vagalume.com/jax-jones/images/140143.jpg'},
-        {artist: 'Jax Jones', music: 'Feels', src: 'https://s2.vagalume.com/jax-jones/images/140143.jpg'},
-      ]
+      dataReady: false,
+      spots: [],
     };
   },
+  methods: {
+      async apiHotpot() {
+      const res = await apiHotpot.getHotSpot()
+      const data = res.data.hotspots
+      this.spots = data.filter(item => item.type === "music")
+      this.dataReady = true
+    }
+  }
 };
 </script>
 <style></style>

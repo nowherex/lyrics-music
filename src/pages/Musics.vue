@@ -47,6 +47,7 @@
 <script>
 import Search from "@/components/Search.vue";
 import LiMusic from '@/components/LiMusic.vue'
+import apiRank from '@/services/apiRank.js'
 export default {
   components: {
     LiMusic,
@@ -57,33 +58,22 @@ export default {
     title: "BetterLyrics",
     titleTemplate: "%s | BetterLyrics",
   },
+    mounted () {
+   this.apiRank()
+  },
   data() {
     return {
       searchMusic: false,
-      topMusic: [
-        { music: "Someone You Loved (tradução)", artist: "Lewis Capaldi" },
-        { music: "Someone You Loved (tradução)", artist: "Lewis Capaldi" },
-        { music: "Someone You Loved (tradução)", artist: "Lewis Capaldi" },
-        { music: "Someone You Loved (tradução)", artist: "Lewis Capaldi" },
-        { music: "Someone You Loved (tradução)", artist: "Lewis Capaldi" },
-        { music: "Someone You Loved (tradução)", artist: "Lewis Capaldi" },
-        { music: "Someone You Loved (tradução)", artist: "Lewis Capaldi" },
-        { music: "Someone You Loved (tradução)", artist: "Lewis Capaldi" },
-        { music: "Someone You Loved (tradução)", artist: "Lewis Capaldi" },
-        { music: "Someone You Loved (tradução)", artist: "Lewis Capaldi" },
-        { music: "Someone You Loved (tradução)", artist: "Lewis Capaldi" },
-        { music: "Someone You Loved (tradução)", artist: "Lewis Capaldi" },
-        { music: "Someone You Loved (tradução)", artist: "Lewis Capaldi" },
-        { music: "Someone You Loved (tradução)", artist: "Lewis Capaldi" },
-        { music: "Someone You Loved (tradução)", artist: "Lewis Capaldi" },
-        { music: "Someone You Loved (tradução)", artist: "Lewis Capaldi" },
-        { music: "Someone You Loved (tradução)", artist: "Lewis Capaldi" },
-        { music: "Someone You Loved (tradução)", artist: "Lewis Capaldi" },
-        { music: "Someone You Loved (tradução)", artist: "Lewis Capaldi" },
-        { music: "Someone You Loved (tradução)", artist: "Lewis Capaldi" },
-      ],
+      topMusic: [],
     };
   },
+  methods: {
+    async apiRank() {
+    const resMusic = await apiRank.getRankMusic(20)
+    const dataMusic = resMusic.data.mus.month.translations
+    this.topMusic = dataMusic
+    }
+  }
 };
 </script>
 <style></style>
