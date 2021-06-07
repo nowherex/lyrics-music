@@ -31,8 +31,18 @@ npm install
 or
 yarn install
 ```
+<p><b>5) Configure suas keys</b></p>
+no arquivo .env_example:
+
+1. informar key da api do youtube:
+https://developers.google.com/youtube/v3/getting-started?hl=pt-br
+2. e a key do vagalumes:
+https://api.vagalume.com.br/docs/
+
+Renomeie o arquivo para .env
 
 <p><b>5) Execute o servidor</b></p>
+
 
 ```bash
 npm run serve
