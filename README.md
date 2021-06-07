@@ -31,7 +31,7 @@ npm install
 or
 yarn install
 ```
-<p><b>5) Configure suas keys</b></p>
+<p><b>3) Configure suas keys</b></p>
 no arquivo .env_example:
 
 1. informar key da api do youtube:
@@ -41,7 +41,7 @@ https://api.vagalume.com.br/docs/
 
 Renomeie o arquivo para .env
 
-<p><b>5) Execute o servidor</b></p>
+<p><b>4) Execute o servidor</b></p>
 
 
 ```bash
