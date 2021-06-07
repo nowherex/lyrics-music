@@ -116,7 +116,7 @@ export default {
       this.showTranslate = false
       const data = await apiMusic.getLyric(id)
       const {mus, art} = data.data
-      const musicAndArtist = `${mus[0].name} ${art.name}`     
+      const musicAndArtist = data? `${mus[0].name} ${art.name}` : ''  
       const video = await apiYoutube.getVideo(musicAndArtist)
       const videoId = video.data.items[0].id.videoId
       const newDate = {mus: mus[0], art: art, videoId: videoId}

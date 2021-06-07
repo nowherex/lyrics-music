@@ -8,7 +8,8 @@ class ApiYoutube {
     }
 
     async getVideo (term) {
-        return await this.api.get(`${term}&type=video&key=AIzaSyAM39o9fiwmJHMndQ0TCyYfnEF1_uSERzw`)
+        // eslint-disable-next-line no-undef
+        return await this.api.get(`${term}&type=video&key=${process.env.VUE_APP_KEY_YOUTUBE}`)
     }
 }
 

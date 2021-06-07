@@ -92,13 +92,21 @@ export default {
     },
         currentRouteName(router) {
         const tab = this.tabs.filter(item => item.link == router)
-        tab[0] ? this.pageId = tab[0].id : ''        
+        tab[0] ? this.pageId = tab[0].id : '' 
+        console.log('router', router)       
+        console.log('logica', tab[0] ? this.pageId = tab[0].id : '')       
         return this.pageId
     }
   },
-  mounted () {
-  const currentRouter = this.$router.currentRoute.value.path
-  this.currentRouteName(currentRouter)
-}
+  watch: {
+         '$route.path': {
+        handler: function(router) {
+          this.pageId = ''
+          this.currentRouteName(router)
+        },
+        deep: true,
+        immediate: true
+      },
+    }
 }
 </script>

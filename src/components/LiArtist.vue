@@ -6,8 +6,8 @@
       {{ data.index + 1 }}°
     </h1>
     <div class="flex items-center pl-4">
-      <img :src="data.src" class="max-h-12 rounded-full" />
-      <p class="p-2 pl-6 text-lg text-white uppercase">{{ data.artist }}</p>
+      <img :src="data.pic_small" class="max-h-12 rounded-full" />
+      <p class="p-2 pl-6 text-lg text-white uppercase">{{ data.name }}</p>
     </div>
   </li>
 </template>

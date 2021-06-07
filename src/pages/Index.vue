@@ -1132,13 +1132,7 @@ export default {
     return {
       dataReady: false,
       spots: [],
-      topArtists: [
-        {artist: 'Anitta', src: 'https://www.vagalume.com.br/anitta/images/anitta.webp'},
-        {artist: 'Olivia Rodrigo', src: 'https://www.vagalume.com.br/olivia-rodrigo/images/olivia-rodrigo.webp'},
-        {artist: 'Olivia Rodrigo', src: 'https://www.vagalume.com.br/olivia-rodrigo/images/olivia-rodrigo.webp'},
-        {artist: 'Olivia Rodrigo', src: 'https://www.vagalume.com.br/olivia-rodrigo/images/olivia-rodrigo.webp'},
-        {artist: 'Olivia Rodrigo', src: 'https://www.vagalume.com.br/olivia-rodrigo/images/olivia-rodrigo.webp'}
-      ],
+      topArtists: [],
       topMusic: []
     };
   },
@@ -1153,9 +1147,12 @@ export default {
       this.dataReady = true
     },
     async apiRank() {
-      const resMusic = await apiRank.getRankMusic(10)
+      const resMusic = await apiRank.getRankMusic(5)
+      const resArtist = await apiRank.getRankArtist(5)
       const dataMusic = resMusic.data.mus.month.translations
+      const dataArtist = resArtist.data.art.month.all
       this.topMusic = dataMusic
+      this.topArtists = dataArtist
     }
   }
 };
