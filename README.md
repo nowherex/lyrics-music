@@ -3,7 +3,7 @@
 
 ### Descrição
 
-Projeto de um site de Letras, desenvolvido com Vuejs (3.0), vue-router, axios, tailwindcss.
+Projeto de um site de Letras de musicas, desenvolvido com Vuejs (3.0), vue-router, axios, tailwindcss.
 
 - Consumo da API do site Vagalumes.
 - Consumo da API do Youtube.
@@ -16,7 +16,7 @@ design baseado em: https://dribbble.com/shots/9052585-Books-Store-Web-App-Dark-V
 <ul>
 <li><b>Heroku</b></li>
   <p>
-
+link: https://betterlyrics.herokuapp.com/
   </p>
 </ul>
 <hr>
