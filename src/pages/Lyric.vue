@@ -36,11 +36,11 @@
             >
               <div class="flex-col m-3 items-center">
                 <div class="flex flex-wrap" v-if="dataReady">
-                  <span class="text-2xl font-bold text-white uppercase"
+                  <span class="text-lg font-bold text-white"
                     ><i class="fas fa-music px-1"></i>
                     {{ data[0].mus.name }}
                   </span>
-                  <span class="text-1xl px-4 font-bold text-white uppercase"
+                  <span class="text-base flex px-4 font-bold text-white"
                     ><i class="fas fa-guitar px-1"></i>
                     {{ data[0].art.name }}
                   </span>

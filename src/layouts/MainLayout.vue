@@ -93,8 +93,6 @@ export default {
         currentRouteName(router) {
         const tab = this.tabs.filter(item => item.link == router)
         tab[0] ? this.pageId = tab[0].id : '' 
-        console.log('router', router)       
-        console.log('logica', tab[0] ? this.pageId = tab[0].id : '')       
         return this.pageId
     }
   },
