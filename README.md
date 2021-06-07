@@ -41,27 +41,27 @@ npm run serve
 <hr>
 
 #### Algumas imagens:
-#####Home 01
+##### Home 01
 
 ![Home 01](https://uploaddeimagens.com.br/images/003/277/259/full/01.JPG?1623081139 "Home 01")
 
-#####Search
+##### Search
 
 ![Search](https://uploaddeimagens.com.br/images/003/277/262/full/02.JPG?1623081207 "Search")
 
-#####Lyric page
+##### Lyric page
 
 ![Lyric page](https://uploaddeimagens.com.br/images/003/277/263/full/03.JPG?1623081294 "Lyric page")
 
-#####Lyric translate
+##### Lyric translate
 
 ![Lyric translate](https://uploaddeimagens.com.br/images/003/277/268/full/04.JPG?1623081491 "Lyric translate")
 
-#####Home Responsive
+##### Home Responsive
 
 ![Home Responsive](https://uploaddeimagens.com.br/images/003/277/271/full/05.JPG?1623081592 "Home Responsive")
 
-#####Menu on mobile
+##### Menu on mobile
 
 ![Menu on mobile 01](https://uploaddeimagens.com.br/images/003/277/273/full/06.JPG?1623081650 "Menu on mobile")
 
