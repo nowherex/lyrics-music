@@ -3,19 +3,8 @@
     <!-- content -->
     <div>
       <!-- search -->
-      <div>
-        <div class="flex items-center">
-          <span
-            class="flex items-center bg-selected h-12 shadow-l px-2 rounded-l-full"
-            ><i class="fas fa-search text-secondary"></i
-          ></span>
-          <input
-            type="search"
-            class="focus:outline-none bg-selected w-full text-white shadow-r rounded-r-full border-0 h-12 px-2"
-            placeholder="Search by music or artist..."
-          />
-        </div>
-      </div>
+      <!-- search -->
+      <Search />
       <!-- top-banner -->
       <div
         class="bg-selected shadow rounded p-10 mt-6 flex justify-between"
@@ -41,7 +30,11 @@ Oops, it looks like the page you're looking for doesn't exist.
   </div>
 </template>
 <script>
+import Search from "@/components/Search.vue";
 export default {
+    components: {
+    Search,
+  },
   name: 'NotFound',
   data() {
     return {
