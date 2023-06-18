@@ -13,12 +13,7 @@ Projeto de um site de Letras de musicas, desenvolvido com Vuejs (3.0), vue-route
 design baseado em: https://dribbble.com/shots/9052585-Books-Store-Web-App-Dark-Version
 
 <h4>Deploy - em produção</h4>
-<ul>
-<li><b>Heroku</b></li>
-  <p>
-link: https://betterlyrics.herokuapp.com/
-  </p>
-</ul>
+link: https://betterlyrics.leoguedes.dev/
 <hr>
 <h2>Teste em Desenvolvimento</h2>
 <p>Ordem de execução para teste:</p>
